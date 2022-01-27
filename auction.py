@@ -131,7 +131,7 @@ class Auction:
             return false if bid unacceptable (maybe)
         """
         self.last_bidder = bidder_name
-        if Auction.testcase == 2:
+        if Auction.testcase == 3:
             # reject bids where amount == best_bid()+increment
             if not self._active:
                 raise AuctionError("Bidding not allowed now")
@@ -142,7 +142,7 @@ class Auction:
                 raise AuctionError("Bid is too low")
             return True
 
-        if Auction.testcase == 3:
+        if Auction.testcase == 2:
             # accept any bid > best_bid()
             if not self._active:
                 raise AuctionError("Bidding not allowed now")
